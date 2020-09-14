@@ -1,0 +1,540 @@
+:root{
+    --main-bg-color: #ceccbf;
+    --trying-this: #2b6d37;
+    --main-bg-gradient: linear-gradient(160deg, #11961c 0%, #065500 90%);
+    --alt-bg-gradient: linear-gradient(160deg, #161616 0%, #2c2c2c 64%);
+    --heading-fonts: 'Sanchez', serif;
+    --article-fonts: 'Raleway', sans-serif;
+    --timeline-color: goldenrod;
+}
+
+/* ==== */
+
+@font-face {
+    font-family: 'Hylia Serif Beta';
+    src: url('/assets/HyliaSerifBeta-Regular.eot');
+    src: url('/assets/HyliaSerifBeta-Regular.eot?#iefix') format('embedded-opentype'),
+        url('/assets/HyliaSerifBeta-Regular.woff2') format('woff2'),
+        url('/assets/HyliaSerifBeta-Regular.woff') format('woff'),
+        url('/styles//HyliaSerifBeta-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html *{
+    box-sizing: border-box;
+}
+
+html, body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    /* background-color: #1e3b17;
+    background-image: url('../assets/images/soft-wallpaper.png');
+    background-blend-mode: color-burn; */
+}
+
+h1, h2, h3, p, span, a, input, button{
+    color: white;
+    margin: 0;
+    padding: 0;
+    text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3{
+    font-family: var(--heading-fonts);
+    font-size: 3rem;
+    font-kerning:none;
+}
+
+p, span, a, input, button, label{
+    font-family: var(--article-fonts);
+    font-size: 1.5rem;
+}
+
+.the-fold{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header{
+    padding: 2rem;
+    background-color: #013f01;
+    background-image: url('../assets/images/soft-wallpaper.png');
+    background-blend-mode: color-burn;
+}
+
+.banner-area{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: calc(38vh - 50px);
+}
+
+#logo-image{
+  
+}
+
+#logo-image img{
+    width: 50vw;
+}
+
+.subscribe-button:hover{
+    background-color: rgba(19, 160, 179, 0.527);
+}
+
+#podcast-modal{
+    background-color: transparent;
+    width: 200px;
+}
+
+.subscribe-here{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 25vw;  
+}
+
+.subscribe-here-platform{
+    width: 350px;
+    margin: 1rem 0;
+    padding: 0;
+    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: rgba(17, 112, 57, 0.76);
+}
+
+.subscribe-here-platform:hover{
+    transform: scale(1.05);
+    opacity: 0.9;
+    background-color: rgb(38, 89, 122);
+}
+
+.subscribe-here-platform img{
+    height: 60px;
+}
+
+.apple{
+    width: 250px;
+}
+
+.google{
+
+}
+
+.stitcher{
+
+}
+
+nav{
+    padding: 0;
+    text-align: right;
+    height: 50px;
+    border-bottom: 1px solid goldenrod;
+    background-color: #162911;
+    background-image: url('../assets/images/soft-wallpaper.png');
+    background-blend-mode: color-burn;
+}
+
+nav ul{
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li{
+    display: inline-block;
+}
+
+nav ul li a{
+    display: inline-block;
+    padding: 1rem 0;
+    text-align: center;
+    margin: 0;
+    text-decoration: none;
+    transition: .1s;
+    position: relative;
+    color: rgb(255, 255, 255);
+}
+
+.socialMenu a{
+    font-size: 2rem;
+    transition: 0.1s;
+    padding: .5rem;
+    width: 50px;
+}
+
+.mainMenu a{
+    width: 150px;
+    font-size: 1rem;
+    
+}
+
+.mainMenu li a:hover{
+    background-color: rgba(218, 165, 32, 0.425);
+    color: white;
+}
+
+.socialMenu a:hover{
+    background-color: rgba(218, 165, 32, 0.425);
+}
+
+main h1, main h2, main p{
+    color: black;
+}
+
+.hero{
+    flex: 1 0 auto;
+    background-color: #1e3b17;
+    background-image: url('../assets/images/soft-wallpaper.png');
+    background-blend-mode: color-burn;
+    border-bottom: 1px solid goldenrod;
+    border-top: 1px solid goldenrod;
+}
+
+
+.hero .wrapper{
+    height: 100%;
+    display: grid;
+    grid-template-rows: 33%;
+    grid-template-areas: 
+    'image title'
+    'image desc'
+    'image player';
+}
+
+.hero div img{
+    grid-area: image;
+    width: 43vw;
+}
+
+.episode-title{
+    grid-area: title;
+    font-size: 3rem; 
+    margin-top: 2rem;
+    padding: .25rem 2rem;
+    text-rendering: optimizeLegibility;
+}
+
+.episode-desc{
+    grid-area: desc;
+    font-size: 1.5rem;
+    padding: .25rem 2rem;
+    color: rgba(255, 255, 255, 0.589);
+}
+
+.player{
+    position: relative;
+}
+
+.player .play{
+    color: rgba(255, 255, 255, 0.589);
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: -50px;
+    left: 75px;
+}
+
+.player .seek{
+    width: 70%;
+    position: absolute;
+    top: -10px;
+    left: 200px;
+    color: rgba(255, 255, 255, 0.589);
+}
+
+.readMore{
+    font-size: 1rem;
+}
+
+
+/* ==== Episode Jump ==== */
+
+.episode-jump{
+    background-color: #013f01;
+    background-image: url('../assets/images/soft-wallpaper.png');
+    background-blend-mode: color-burn;
+}
+
+.episode-jump .wrapper{
+    width: 50%;
+    margin: auto;
+}
+
+.episode-jump h2{
+    margin-top: 3rem;
+    text-align: center;
+    font-size: 3rem;
+    font-family: var(--heading-fonts);
+}
+
+.carousel{
+    list-style: none;
+    margin: 1rem;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel li{
+    background-color: rgba(17, 112, 57, 0.76);
+    border-radius: 16px;
+    margin: 0.25rem;
+    padding: 0.5rem;
+    height: 230px;
+	width: 230px;  
+    transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0.95);
+}
+
+.carousel li:hover{
+    transform: scale(1);
+    background-color: rgb(38, 89, 122);
+} 
+
+.carousel li img{
+    height: auto;
+	width: 230px;  
+}
+
+/* ==== Timeline LAYOUT ==== */
+
+.timeline{
+    background-color: #153315;
+    background-image: url('../assets/images/soft-wallpaper.png');
+    background-blend-mode: color-burn;
+    border-top: 1px soild goldenrod;
+    border-bottom: 1px solid goldenrod;
+}
+
+.timeline .wrapper{
+    margin: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.timeline h2{
+    margin-top: 3rem;
+    text-align: center;
+    font-size: 3rem;
+    font-family: var(--heading-fonts);
+}
+
+.not-yet{
+    opacity: 0.7;
+    filter: grayscale(0.8);
+}
+
+.playing-now{
+    box-shadow: 0 0 30px -10px gold;
+}
+
+/* ==== Footer ==== */
+
+footer{
+    flex-shrink: 0;
+    background-color: #1e3b17;
+    border-top: solid 1px goldenrod;
+    background-image: url('../assets/images/triforce-splat.png');
+    background-position: center;
+    background-blend-mode: color-burn;
+    padding: 1rem;
+  }
+
+footer .wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-menu{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.footer-menu li{
+    display: inline-block;
+    margin: 1rem;
+    padding: 1rem;
+}
+
+.footer-menu li a{
+    font-size: 1rem;
+}
+
+.copyright{
+    font-size: 1rem;
+}
+
+.copyright a{
+    font-size: 1rem;
+}
+
+/* TIMELINE STUFF HOLY SHIT */
+
+#timeline-graphic{
+    margin: auto;
+    background: transparent;    
+}
+
+#timeline-graphic ol{
+    margin: 0;
+    padding: 0;
+}
+
+/* #timeline-graphic::after {
+	content: "";
+	position: absolute;
+	left: -50px;
+	display: block;
+	width: 0;
+	height: 0;
+    border-radius: 10px;
+	border: 20px solid var(--timeline-color);
+} */
+
+#timeline-graphic::after { /* bottom arrow */
+	right: -40px;
+    top: 2800px;
+	border: 40px solid transparent;
+	border-bottom: 0;
+	border-top: 60px solid var(--timeline-color);
+    border-radius: 3px;
+}
+
+#timeline-graphic li {
+    /* position: relative;
+    top: 0px; */
+    display: block;
+    width: 400px;
+    font: bold 14px arial;
+    /* left: -62.5%; */
+    margin-top: 20px;
+    color: white;
+    font-size: 2rem;
+    background-color: rgb(2, 66, 2);
+    border: 5px solid var(--timeline-color);
+    border-radius: 25px;
+    text-align: center;
+    padding: 1rem;
+    transition: all 0.2s;
+    margin-left: 0;
+}
+
+#timeline-graphic li:hover{
+    transform: scale(1.05);
+    z-index: 100;
+    cursor: pointer;
+}
+
+
+#timeline-graphic li::before {
+    /* content: "";
+    position: absolute;
+    left: -30px;
+    top: 10px;
+    display: block;
+    width: 8px;
+    height: 8px;
+    border: 4px solid var(--timeline-color);
+    border-radius: 10px;
+    background: rgb(255, 255, 255); */
+}
+
+.details {
+	display: none;
+    position: absolute;
+    width: 600px;
+	left: 120px;
+	top: -10px;
+	padding: 15px;
+	border-radius: 3px;
+	/* border-right: 2px solid rgba(0,0,0,.1);
+	border-bottom: 2px solid rgba(0,0,0,.1);
+    border-left: 10px solid var(--timeline-color); */
+    background: #fff;
+    
+}
+.details::before {
+	/* content: "";
+	position: absolute;
+	left: -19px;
+	top: 15px;
+	display: block;
+	width: 1px;
+	height: 1px;
+	border: 5px solid transparent;
+	border-right-color: var(--timeline-color);
+    border-right-width: 15px;
+    border-left: 0; */
+}
+
+#root-timeline{
+    /* position: absolute;
+    left: 400px; */
+    /* border-left: 10px solid var(--timeline-color);
+    height: 420px; */
+}
+
+#child-timeline{
+    /* position: absolute;
+    top: 410px;
+    left: 400px; */
+    /* border-left: 10px solid var(--timeline-color);
+    border-top: 10px solid var(--timeline-color); */
+}
+
+#downfall-timeline{
+    /* position: absolute;
+    top: 410px;
+    left: -40px; */
+    /* border-left: 10px solid var(--timeline-color);
+    border-top: 10px solid var(--timeline-color); */
+
+}
+
+#adult-timeline{
+    /* position: absolute;
+    top: 410px;
+    left: 840px; */
+    /* border-left: 10px solid var(--timeline-color);
+    border-top: 10px solid transparent; */
+}
+
+
+@media screen and (max-device-width: 1600px) {
+    .banner-area{
+        flex-direction: column;
+    }
+
+    .subscribe-here{
+        display: flex;
+    }
+
+    .subscribe-here-platform{
+        padding: 1rem;
+        margin: 1rem;
+    }
+    .subscribe-here-platform img{
+        width: 200px;
+        margin: 0;
+        padding: 0;
+    }
+}
